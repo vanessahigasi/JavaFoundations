@@ -1,50 +1,24 @@
 package org.bts_netmind.javaproject;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class Order extends Dish{
+public class Order {
 
     private String customerName;
-    private String dishName;
-    private DishType dishType;
-    private boolean glutenFree;
-    private boolean vegetarian;
-    private boolean halalMeat;
-    private boolean seafoodFree;
-    private Object extras;
-    private static List<Order> orders = new ArrayList<Order>();
+    private MyDish dish;
 
-    public Order(String[] item) {
-        super();
-        this.customerName = getCustomerName();
-
+    public Order() {
     }
 
-
-    public Order(String customerName, String dishName, DishType dishType, boolean glutenFree, boolean vegetarian, boolean halalMeat, boolean seafoodFree, Object extras) {
+    public Order(String customerName, MyDish dish) {
         this.customerName = customerName;
-        this.dishName = dishName;
-        this.dishType = dishType;
-        this.glutenFree = glutenFree;
-        this.vegetarian = vegetarian;
-        this.halalMeat = halalMeat;
-        this.seafoodFree = seafoodFree;
-        this.extras = extras;
-        orders.add(this);
+        this.dish = dish;
     }
 
-    public Dessert calories() {
-        return this.calories();
+    public MyDish getDish() {
+        return dish;
     }
 
-
-    public Object getExtras() {
-        return extras;
-    }
-
-    public void setExtras(String extras) {
-        this.extras = extras;
+    public void setDish(MyDish dish) {
+        this.dish = dish;
     }
 
     public String getCustomerName() {
@@ -56,57 +30,8 @@ public class Order extends Dish{
     }
 
     @Override
-    public String getDishName() {
-        return dishName;
-    }
-
-    @Override
-    public void setDishName(String dishName) {
-        this.dishName = dishName;
-    }
-
-    public boolean isGlutenFree() {
-        return glutenFree;
-    }
-
-    public void setGlutenFree(boolean glutenFree) {
-        this.glutenFree = glutenFree;
-    }
-
-    public boolean isVegetarian() {
-        return vegetarian;
-    }
-
-    public void setVegetarian(boolean vegetarian) {
-        this.vegetarian = vegetarian;
-    }
-
-    public boolean isHalalMeat() {
-        return halalMeat;
-    }
-
-    public void setHalalMeat(boolean halalMeat) {
-        this.halalMeat = halalMeat;
-    }
-
-    public boolean isSeafoodFree() {
-        return seafoodFree;
-    }
-
-    public void setSeafoodFree(boolean seafoodFree) {
-        this.seafoodFree = seafoodFree;
-    }
-
-    public static List<Order> getOrders() {
-        return orders;
-    }
-
-    @Override
     public String toString() {
-        return "Customer: " + this.customerName + " Dish: " + this.dishName + ", " +
-                this.dishType + ", " + " Gluten-Free: " + this.glutenFree + ", " +
-                " Vegetarian: " + this.vegetarian + ", " + "Halal-Meat: " + this.halalMeat +
-                ", " + "SeaFood-Free: " + this.seafoodFree + " , " + "Extras: " + this.extras;
-
+        return "Customer: " + this.customerName + ", Dish: " + this.dish;
     }
+
 }
