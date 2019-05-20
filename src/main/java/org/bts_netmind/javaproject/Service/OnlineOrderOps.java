@@ -1,4 +1,7 @@
-package org.bts_netmind.javaproject;
+package org.bts_netmind.javaproject.Service;
+
+import org.bts_netmind.javaproject.Model.Dish;
+import org.bts_netmind.javaproject.Model.MyDish;
 
 import java.util.List;
 
@@ -37,4 +40,5 @@ public interface OnlineOrderOps<T, S extends Dish> {
     // 'getStatsByDishType' returns a String with the percentage of dishes ordered that correspond to
     // a specific type (taken as input argument)
     public String getStatsByDishType(List<S> dishList, String dishType);
+
 }

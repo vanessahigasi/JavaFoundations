@@ -1,4 +1,4 @@
-package org.bts_netmind.javaproject;
+package org.bts_netmind.javaproject.Model;
 
 public abstract class Dish {
 

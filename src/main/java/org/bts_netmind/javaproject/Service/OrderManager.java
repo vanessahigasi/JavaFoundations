@@ -1,4 +1,8 @@
-package org.bts_netmind.javaproject;
+package org.bts_netmind.javaproject.Service;
+import org.bts_netmind.javaproject.Model.DishType;
+import org.bts_netmind.javaproject.Model.MyDish;
+import org.bts_netmind.javaproject.Model.Order;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -130,6 +134,6 @@ public class OrderManager implements OnlineOrderOps<Order, MyDish> {
                 filteredList.add(dish);
             }
         }
-        return String.valueOf((float) filteredList.size()/dishList.size());
+        return String.valueOf(Math.round((float)filteredList.size()/dishList.size()*100));
     }
 }

@@ -1,4 +1,7 @@
-package org.bts_netmind.javaproject;
+package org.bts_netmind.javaproject.Model;
+
+import org.bts_netmind.javaproject.Model.Dish;
+import org.bts_netmind.javaproject.Model.DishType;
 
 public class MyDish extends Dish {
 
@@ -13,7 +16,8 @@ public class MyDish extends Dish {
     public MyDish() {
     }
 
-    public MyDish (String dishName, DishType dishType, boolean glutenFree, boolean vegetarian, boolean halalMeat, boolean seafoodFree, Object extras) {
+    public MyDish (String dishName, DishType dishType, boolean glutenFree,
+                   boolean vegetarian, boolean halalMeat, boolean seafoodFree, Object extras) {
         this.dishName = dishName;
         this.dishType = dishType;
         this.glutenFree = glutenFree;
@@ -89,19 +93,19 @@ public class MyDish extends Dish {
 
         if(this.dishType == DishType.st){
             dishType = "Starter";
-            extras = "Eaten with: ";
+            extras = "Cutlery recommended: ";
         } else if (this.dishType == DishType.mc){
             dishType = "Main Course";
-            extras = "Best with: ";
+            extras = "Drink recommendation: ";
         } else if(this.dishType == DishType.ds){
             dishType = "Dessert";
             extras = "Calories: ";
         }
 
         return this.dishName + ", Dish Type: " +
-                dishType + ", " + " Gluten-Free: " + this.glutenFree + ", " +
-                " Vegetarian: " + this.vegetarian + ", " + "Halal-Meat: " + this.halalMeat +
-                ", " + "SeaFood-Free: " + this.seafoodFree + ", " + extras + this.extras+ ".\n";
+                dishType + ", " + " GlutenFree: " + this.glutenFree + ", " +
+                " Vegetarian: " + this.vegetarian + ", " + "HalalMeat: " + this.halalMeat +
+                ", " + "SeaFoodFree: " + this.seafoodFree + ", " + extras + this.extras+ ".\n";
 
     }
 

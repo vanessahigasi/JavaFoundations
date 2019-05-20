@@ -1,5 +1,9 @@
-package org.bts_netmind.javaproject;
+package org.bts_netmind.javaproject.Main;
 
+
+import org.bts_netmind.javaproject.Model.MyDish;
+import org.bts_netmind.javaproject.Model.Order;
+import org.bts_netmind.javaproject.Service.OrderManager;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -7,10 +11,7 @@ import java.util.List;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException {
-
-        //Order order1 = new Order("Peter Parker", "cinnamon custard",DishType.DESSERT,false,false,false,true, 120);
-        //System.out.println(order1);
+    public static void main(String[] args) {
 
 
         OrderManager orderManager = new OrderManager();
@@ -18,7 +19,8 @@ public class Main {
         List<Order> orders = orderManager.readCsv();
 
 
-        System.out.println("----------------Welcome to the Restaurant: ORDERS  ------------------------------");
+        System.out.println(" ");
+        System.out.println("--------------------  Welcome to the International Restaurant: ORDERS  ------------------------------");
         System.out.println(" ");
         System.out.println(" ");
         System.out.println("# Number of orders: "+ orderManager.getNumberOrders(orders));
@@ -47,8 +49,7 @@ public class Main {
         System.out.println("    " + orderManager.getDishesByFeature(getDishListFromOrderList(orders),"glutenFree").toString());
         System.out.println(" ");
         System.out.println("# Dish by Stats 'Main Course' type: ");
-        System.out.println("    " + orderManager.getStatsByDishType(getDishListFromOrderList(orders),"mc"));
-
+        System.out.println("    " + orderManager.getStatsByDishType(getDishListFromOrderList(orders),"mc") + "% of the dishes are Main Course");
 
     }
 
